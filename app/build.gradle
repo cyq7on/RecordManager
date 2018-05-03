@@ -1,15 +1,15 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 23
+    compileSdkVersion 24
     buildToolsVersion '27.0.3'
 
     aaptOptions.cruncherEnabled = false
     aaptOptions.useNewCruncher = false
 
     defaultConfig {
-        applicationId "cn.cyq7on.cookbook"
-        minSdkVersion 14
+        applicationId "cn.cyq7on.rm"
+        minSdkVersion 19
         targetSdkVersion 22
         versionCode 10
         versionName "2.1.0"
@@ -68,5 +68,5 @@ dependencies {
     compile('com.yuyh.imgsel:library:2.0.2') {
         exclude module: 'support-v4'
     }
-
+    compile 'com.github.z3896823:PanelList:v1.3.0'
 }

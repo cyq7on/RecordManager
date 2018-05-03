@@ -7,6 +7,7 @@ buildscript {
             url 'https://maven.google.com/'
             name 'Google'
         }
+        google()
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:2.3.3'
@@ -21,6 +22,8 @@ allprojects {
         jcenter()
         //TODO 集成：1.1、配置Bmob的maven仓库地址
         maven { url "https://raw.github.com/bmob/bmob-android-sdk/master" }
+        maven { url 'https://jitpack.io' }
+        google()
     }
 }
 
