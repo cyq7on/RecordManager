@@ -20,8 +20,8 @@
     <string name="login_pwd">密码 </string>
     <string name="login_email">确认密码 </string>
 
-    <string name="main_tab_recent">推荐</string>
-    <string name="main_tab_contact">个人</string>
+    <string name="main_tab_recent">首页</string>
+    <string name="main_tab_contact">上传</string>
     <string name="mian_tab_set">设置</string>
 
     <string name="add_avator">头像</string>
@@ -63,5 +63,12 @@
     <string name="upload_launch">午餐餐品</string>
     <string name="upload_dinner">晚餐餐品</string>
     <string name="upload">上传</string>
+
+    <string name="upload_user">请填写姓名</string>
+    <string name="upload_id">请填写身份证号</string>
+    <string name="upload_tel">请填写电话号码</string>
+    <string name="upload_plate">请填写车牌号</string>
+    <string name="upload_type">请填写驾照类型</string>
+    <string name="upload_score">请填写分数</string>
 
 </resources>
