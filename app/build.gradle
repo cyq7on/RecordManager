@@ -1,7 +1,7 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 24
+    compileSdkVersion 26
     buildToolsVersion '27.0.3'
 
     aaptOptions.cruncherEnabled = false
@@ -69,4 +69,5 @@ dependencies {
         exclude module: 'support-v4'
     }
     compile 'com.github.HYY-yu:TableRecyclerView:v1.0.0'
+    compile 'com.evrencoskun.library:tableview:0.8.6'
 }
