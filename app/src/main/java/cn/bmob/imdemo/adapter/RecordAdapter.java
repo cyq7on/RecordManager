@@ -41,12 +41,12 @@ public class RecordAdapter implements IDataAdapter {
     @Override
     public void convertData(int i, List<TextView> list) {
         Record record = data.get(i);
-        list.get(0).setText(record.name);
-        list.get(1).setText(record.idCard);
-        list.get(2).setText(record.plateNum);
-        list.get(0).setText(record.score);
-        list.get(0).setText(record.type);
-        list.get(0).setText(record.tel);
+        list.get(1).setText(record.name);
+        list.get(2).setText(record.idCard);
+        list.get(3).setText(record.plateNum);
+        list.get(4).setText(String.valueOf(record.score));
+        list.get(5).setText(record.type);
+        list.get(6).setText(record.tel);
     }
 
     @Override
