@@ -47,9 +47,13 @@ public class UserModel extends BaseModel {
      * @param pwdagain
      * @param listener
      */
-    public void register(String username, String password, String pwdagain, final LogInListener listener) {
+    public void register(String username, String idCard,String password, String pwdagain, final LogInListener listener) {
         if (TextUtils.isEmpty(username)) {
             listener.done(null, new BmobException(CODE_NULL, "请填写用户名"));
+            return;
+        }
+        if (TextUtils.isEmpty(idCard)) {
+            listener.done(null, new BmobException(CODE_NULL, "请填写身份证号"));
             return;
         }
         if (TextUtils.isEmpty(password)) {
@@ -67,6 +71,7 @@ public class UserModel extends BaseModel {
         final User user = new User();
         user.setUsername(username);
         user.setPassword(password);
+        user.idCard = idCard;
         user.signUp(new SaveListener<User>() {
             @Override
             public void done(User user, BmobException e) {

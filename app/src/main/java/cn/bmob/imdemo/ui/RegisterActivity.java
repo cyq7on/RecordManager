@@ -28,6 +28,8 @@ public class RegisterActivity extends ParentWithNaviActivity {
 
     @Bind(R.id.et_username)
     EditText et_username;
+    @Bind(R.id.et_idCard)
+    EditText et_idCard;
     @Bind(R.id.et_password)
     EditText et_password;
     @Bind(R.id.btn_register)
@@ -55,7 +57,8 @@ public class RegisterActivity extends ParentWithNaviActivity {
      */
     @OnClick(R.id.btn_register)
     public void onRegisterClick(View view) {
-        UserModel.getInstance().register(et_username.getText().toString(), et_password.getText().toString(), et_password_again.getText().toString(), new LogInListener() {
+        UserModel.getInstance().register(et_username.getText().toString(), et_idCard.getText().toString(),
+                et_password.getText().toString(), et_password_again.getText().toString(), new LogInListener() {
             @Override
             public void done(Object o, BmobException e) {
                 if (e == null) {
