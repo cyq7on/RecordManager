@@ -7,7 +7,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.app.feng.fixtablelayout.FixTableLayout;
 import com.orhanobut.logger.Logger;
 
 import java.util.List;
@@ -15,7 +14,6 @@ import java.util.List;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import cn.bmob.imdemo.R;
-import cn.bmob.imdemo.adapter.RecordAdapter;
 import cn.bmob.imdemo.base.ParentWithNaviFragment;
 import cn.bmob.imdemo.bean.Record;
 import cn.bmob.v3.BmobQuery;
@@ -25,8 +23,6 @@ import cn.bmob.v3.listener.FindListener;
 public class RecordFragment extends ParentWithNaviFragment {
 
 
-    @Bind(R.id.fixTableLayout)
-    FixTableLayout fixTableLayout;
     @Bind(R.id.sw_refresh)
     SwipeRefreshLayout swRefresh;
     private String[] titles = {"ID", "姓名", "身份证号", "车牌号", "分数", "驾照类型", "电话号码"};
@@ -75,7 +71,6 @@ public class RecordFragment extends ParentWithNaviFragment {
                 swRefresh.setRefreshing(false);
                 if (e == null) {
                     if (list != null && list.size() > 0) {
-                        fixTableLayout.setAdapter(new RecordAdapter(titles,list));
                     } else {
                         if(getUserVisibleHint()){
                             toast("暂无信息");

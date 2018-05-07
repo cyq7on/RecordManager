@@ -30,7 +30,7 @@ public class TableAdapter extends BaseRecyclerAdapter<Record> {
     }
 
     @Override
-    public void bindView(BaseRecyclerHolder holder, Record Record, int position) {
+    public void bindView(BaseRecyclerHolder holder, Record record, int position) {
         if (holder.layoutId == R.layout.item_table) {
             holder.setText(R.id.tv_id, titles[0]);
             holder.setText(R.id.tv_name, titles[1]);
@@ -45,7 +45,18 @@ public class TableAdapter extends BaseRecyclerAdapter<Record> {
             holder.setText(R.id.tv_break_place, titles[10]);
             holder.setText(R.id.tv_fee, titles[11]);
         } else {
-
+            holder.setText(R.id.tv_id, record.getObjectId());
+            holder.setText(R.id.tv_name, record.name);
+            holder.setText(R.id.tv_id_card, record.idCard);
+            holder.setText(R.id.tv_plate_num, record.plateNum);
+//            holder.setImageView(record.image.getFileUrl(),R.mipmap.ic_launcher,R.id.iv);
+            holder.setText(R.id.tv_score, String.valueOf(record.score));
+            holder.setText(R.id.tv_type, record.type);
+            holder.setText(R.id.tv_tel, record.tel);
+            holder.setText(R.id.tv_date, record.date);
+            holder.setText(R.id.tv_break_type, record.breakType);
+            holder.setText(R.id.tv_break_place, record.breakPlace);
+            holder.setText(R.id.tv_fee, record.fee);
         }
     }
 

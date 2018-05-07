@@ -61,7 +61,7 @@ public class TableFragment extends ParentWithNaviFragment {
                 if (viewtype == TableAdapter.TYPE_HEAD) {
                     return R.layout.item_table;
                 } else {
-                    return R.layout.item_contact;
+                    return R.layout.item_table_content;
                 }
             }
 
@@ -104,6 +104,7 @@ public class TableFragment extends ParentWithNaviFragment {
                 swRefresh.setRefreshing(false);
                 if (e == null) {
                     if (list != null && list.size() > 0) {
+                        adapter.bindDatas(list);
                     } else {
                         if (getUserVisibleHint()) {
                             toast("暂无信息");
