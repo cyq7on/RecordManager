@@ -30,6 +30,8 @@ public class RecordFragment extends ParentWithNaviFragment {
     @Bind(R.id.sw_refresh)
     SwipeRefreshLayout swRefresh;
     private String[] titles = {"ID", "姓名", "身份证号", "车牌号", "分数", "驾照类型", "电话号码"};
+    private String[] titles2 = {"ID", "姓名", "身份证号", "车牌号", "车牌照", "分数", "驾照类型", "电话号码"
+    , "时间", "违规类型", "违规地点","费用"};
 
     @Override
     protected String title() {

@@ -68,7 +68,12 @@
     <string name="upload_id">请填写身份证号</string>
     <string name="upload_tel">请填写电话号码</string>
     <string name="upload_plate">请填写车牌号</string>
+    <string name="upload_img">请选择车牌照片</string>
     <string name="upload_type">请填写驾照类型</string>
     <string name="upload_score">请填写分数</string>
+    <string name="upload_break_type">请填写违规类型</string>
+    <string name="upload_break_place">请填写违规地点</string>
+    <string name="upload_date">请选择时间</string>
+    <string name="upload_fee">请填写费用</string>
 
 </resources>

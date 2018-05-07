@@ -2,134 +2,231 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="@mipmap/login_bg" >
+    android:background="@mipmap/login_bg"
+    android:orientation="vertical">
 
-    <include layout="@layout/include_navi"/>
+    <include layout="@layout/include_navi" />
 
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:background="@drawable/input_bg"
-        android:orientation="vertical" >
+        android:layout_height="wrap_content">
 
-        <EditText
-            android:id="@+id/et_name"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/height_title"
-            android:background="@color/transparent"
-            android:drawablePadding="25dip"
-            android:hint="@string/upload_user"
-            android:paddingLeft="15dip"
-            android:shadowDx="0.0"
-            android:shadowDy="1.0"
-            android:shadowRadius="1.0"
-            android:textColorHint="#ffdddddd" />
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="0.5dp"
-            android:background="@mipmap/base_horization_line" />
-
-
-        <EditText
-            android:id="@+id/et_idCard"
-            android:minHeight="@dimen/height_title"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/transparent"
-            android:drawablePadding="25dip"
-            android:hint="@string/upload_id"
-            android:paddingLeft="15dip"
-            android:shadowDx="0.0"
-            android:shadowDy="1.0"
-            android:shadowRadius="1.0"
-            android:textColorHint="#ffdddddd" />
+            android:layout_margin="10dp"
+            android:background="@drawable/input_bg"
+            android:orientation="vertical">
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="0.5dp"
-            android:background="@mipmap/base_horization_line" />
-        <EditText
-            android:id="@+id/et_plate"
-            android:minHeight="@dimen/height_title"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/transparent"
-            android:drawablePadding="25dip"
-            android:hint="@string/upload_plate"
-            android:paddingLeft="15dip"
-            android:shadowDx="0.0"
-            android:shadowDy="1.0"
-            android:shadowRadius="1.0"
-            android:textColorHint="#ffdddddd" />
+            <EditText
+                android:id="@+id/et_name"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/height_title"
+                android:background="@color/transparent"
+                android:drawablePadding="25dip"
+                android:hint="@string/upload_user"
+                android:paddingLeft="15dip"
+                android:shadowDx="0.0"
+                android:shadowDy="1.0"
+                android:shadowRadius="1.0"
+                android:textColorHint="#ffdddddd" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@mipmap/base_horization_line" />
 
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="0.5dp"
-            android:background="@mipmap/base_horization_line" />
+            <EditText
+                android:id="@+id/et_idCard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/transparent"
+                android:drawablePadding="25dip"
+                android:hint="@string/upload_id"
+                android:minHeight="@dimen/height_title"
+                android:paddingLeft="15dip"
+                android:shadowDx="0.0"
+                android:shadowDy="1.0"
+                android:shadowRadius="1.0"
+                android:textColorHint="#ffdddddd" />
 
-        <EditText
-            android:id="@+id/et_score"
-            android:minHeight="@dimen/height_title"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/transparent"
-            android:drawablePadding="25dip"
-            android:hint="@string/upload_score"
-            android:paddingLeft="15dip"
-            android:inputType="number"
-            android:shadowDx="0.0"
-            android:shadowDy="1.0"
-            android:shadowRadius="1.0"
-            android:textColorHint="#ffdddddd" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@mipmap/base_horization_line" />
+
+            <EditText
+                android:id="@+id/et_plate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/transparent"
+                android:drawablePadding="25dip"
+                android:hint="@string/upload_plate"
+                android:minHeight="@dimen/height_title"
+                android:paddingLeft="15dip"
+                android:shadowDx="0.0"
+                android:shadowDy="1.0"
+                android:shadowRadius="1.0"
+                android:textColorHint="#ffdddddd" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@mipmap/base_horization_line" />
+
+            <TextView
+                android:id="@+id/et_image"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/height_title"
+                android:background="@color/transparent"
+                android:hint="@string/upload_img"
+                android:gravity="center_vertical"
+                android:paddingLeft="15dip"
+                android:paddingRight="15dip"
+                android:drawableRight="@mipmap/register_bottom_arrow"
+                android:textColorHint="#ffdddddd" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@mipmap/base_horization_line" />
+
+            <EditText
+                android:id="@+id/et_score"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/transparent"
+                android:drawablePadding="25dip"
+                android:hint="@string/upload_score"
+                android:inputType="number"
+                android:minHeight="@dimen/height_title"
+                android:paddingLeft="15dip"
+                android:shadowDx="0.0"
+                android:shadowDy="1.0"
+                android:shadowRadius="1.0"
+                android:textColorHint="#ffdddddd" />
 
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="0.5dp"
-            android:background="@mipmap/base_horization_line" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@mipmap/base_horization_line" />
 
-        <EditText
-            android:id="@+id/et_type"
-            android:minHeight="@dimen/height_title"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/transparent"
-            android:drawablePadding="25dip"
-            android:hint="@string/upload_type"
-            android:paddingLeft="15dip"
-            android:shadowDx="0.0"
-            android:shadowDy="1.0"
-            android:shadowRadius="1.0"
-            android:textColorHint="#ffdddddd" />
+            <EditText
+                android:id="@+id/et_type"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/transparent"
+                android:drawablePadding="25dip"
+                android:hint="@string/upload_type"
+                android:minHeight="@dimen/height_title"
+                android:paddingLeft="15dip"
+                android:shadowDx="0.0"
+                android:shadowDy="1.0"
+                android:shadowRadius="1.0"
+                android:textColorHint="#ffdddddd" />
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="0.5dp"
-            android:background="@mipmap/base_horization_line" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@mipmap/base_horization_line" />
 
-        <EditText
-            android:id="@+id/et_tel"
-            android:minHeight="@dimen/height_title"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/transparent"
-            android:drawablePadding="25dip"
-            android:hint="@string/upload_tel"
-            android:paddingLeft="15dip"
-            android:inputType="phone"
-            android:shadowDx="0.0"
-            android:shadowDy="1.0"
-            android:shadowRadius="1.0"
-            android:textColorHint="#ffdddddd" />
+            <EditText
+                android:id="@+id/et_tel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/transparent"
+                android:drawablePadding="25dip"
+                android:hint="@string/upload_tel"
+                android:inputType="phone"
+                android:minHeight="@dimen/height_title"
+                android:paddingLeft="15dip"
+                android:shadowDx="0.0"
+                android:shadowDy="1.0"
+                android:shadowRadius="1.0"
+                android:textColorHint="#ffdddddd" />
 
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@mipmap/base_horization_line" />
 
+            <TextView
+                android:id="@+id/tv_date"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/height_title"
+                android:background="@color/transparent"
+                android:hint="@string/upload_date"
+                android:gravity="center_vertical"
+                android:paddingLeft="15dip"
+                android:paddingRight="15dip"
+                android:drawableRight="@mipmap/register_bottom_arrow"
+                android:textColorHint="#ffdddddd" />
 
-    </LinearLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@mipmap/base_horization_line" />
+
+            <EditText
+                android:id="@+id/et_break_type"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/transparent"
+                android:drawablePadding="25dip"
+                android:hint="@string/upload_break_type"
+                android:inputType="phone"
+                android:minHeight="@dimen/height_title"
+                android:paddingLeft="15dip"
+                android:shadowDx="0.0"
+                android:shadowDy="1.0"
+                android:shadowRadius="1.0"
+                android:textColorHint="#ffdddddd" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@mipmap/base_horization_line" />
+
+            <EditText
+                android:id="@+id/et_break_place"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/transparent"
+                android:drawablePadding="25dip"
+                android:hint="@string/upload_break_place"
+                android:inputType="phone"
+                android:minHeight="@dimen/height_title"
+                android:paddingLeft="15dip"
+                android:shadowDx="0.0"
+                android:shadowDy="1.0"
+                android:shadowRadius="1.0"
+                android:textColorHint="#ffdddddd" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@mipmap/base_horization_line" />
+
+            <EditText
+                android:id="@+id/et_fee"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/transparent"
+                android:drawablePadding="25dip"
+                android:hint="@string/upload_fee"
+                android:inputType="phone"
+                android:minHeight="@dimen/height_title"
+                android:paddingLeft="15dip"
+                android:shadowDx="0.0"
+                android:shadowDy="1.0"
+                android:shadowRadius="1.0"
+                android:textColorHint="#ffdddddd" />
+
+        </LinearLayout>
+    </ScrollView>
 
     <Button
         android:id="@+id/btn_upload"

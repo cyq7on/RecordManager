@@ -34,6 +34,7 @@ public class UploadRecordFragment extends ParentWithNaviFragment {
     EditText etTel;
     @Bind(R.id.btn_upload)
     Button btnUpload;
+    @Bind(R.id.et_image) android.widget.TextView etImage;@Bind(R.id.tv_date) android.widget.TextView tvDate;@Bind(R.id.et_break_type) EditText etBreakType;@Bind(R.id.et_break_place) EditText etBreakPlace;@Bind(R.id.et_fee) EditText etFee;
 
     @Override
     protected String title() {
@@ -55,9 +56,16 @@ public class UploadRecordFragment extends ParentWithNaviFragment {
                 String score = etScore.getText().toString();
                 String type = etType.getText().toString();
                 String tel = etTel.getText().toString();
+                String image = etImage.getText().toString();
+                String date = tvDate.getText().toString();
+                String breakType = etBreakType.getText().toString();
+                String breakPlace = etBreakPlace.getText().toString();
+                String fee = etFee.getText().toString();
                 if(TextUtils.isEmpty(name) || TextUtils.isEmpty(idCard) || TextUtils.isEmpty(plate)
                         || TextUtils.isEmpty(score) || TextUtils.isEmpty(type)
-                        || TextUtils.isEmpty(tel)){
+                        || TextUtils.isEmpty(tel)|| TextUtils.isEmpty(image)|| TextUtils.isEmpty(date)
+                        || TextUtils.isEmpty(breakPlace)|| TextUtils.isEmpty(breakType)
+                        || TextUtils.isEmpty(fee)){
                     toast("请将信息填写完整");
                     return;
                 }
