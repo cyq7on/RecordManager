@@ -15,6 +15,7 @@ public class Record extends BmobObject {
     public String breakType;
     public String breakPlace;
     public String fee;
+    public int status;
 
     @Override
     public String toString() {

@@ -7,10 +7,11 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.EditText;
+import android.widget.PopupMenu;
 
 import com.orhanobut.logger.Logger;
 
@@ -21,6 +22,7 @@ import butterknife.ButterKnife;
 import cn.bmob.imdemo.R;
 import cn.bmob.imdemo.adapter.TableAdapter;
 import cn.bmob.imdemo.adapter.base.IMutlipleItem;
+import cn.bmob.imdemo.base.ParentWithNaviActivity;
 import cn.bmob.imdemo.base.ParentWithNaviFragment;
 import cn.bmob.imdemo.bean.Record;
 import cn.bmob.v3.BmobQuery;
@@ -34,19 +36,36 @@ public class TableFragment extends ParentWithNaviFragment {
     RecyclerView rcView;
     @Bind(R.id.sw_refresh)
     SwipeRefreshLayout swRefresh;
-    @Bind(R.id.btn_condition)
-    Button btnCondition;
-    @Bind(R.id.btn_black)
-    Button btnBlack;
     @Bind(R.id.et_idCard)
     EditText etIdCard;
     @Bind(R.id.et_name)
     EditText etName;
     private TableAdapter adapter;
+    private PopupMenu popup;
 
     @Override
     protected String title() {
         return "违章记录";
+    }
+
+    @Override
+    public Object right() {
+        return R.drawable.base_action_bar_add_bg_selector;
+    }
+
+    @Override
+    public ParentWithNaviActivity.ToolBarListener setToolBarListener() {
+        return new ParentWithNaviActivity.ToolBarListener() {
+            @Override
+            public void clickLeft() {
+
+            }
+
+            @Override
+            public void clickRight() {
+                popup.show();
+            }
+        };
     }
 
     @Nullable
@@ -86,19 +105,34 @@ public class TableFragment extends ParentWithNaviFragment {
         swRefresh.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
-                query();
+                query(false);
             }
         });
-        btnCondition.setOnClickListener(new View.OnClickListener() {
+
+        popup = new PopupMenu(getActivity(),tv_right);
+        popup.getMenuInflater().inflate(R.menu.menu_search, popup.getMenu());
+        popup.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
             @Override
-            public void onClick(View view) {
-                query();
-            }
-        });
-        btnBlack.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                query(true);
+            public boolean onMenuItemClick(MenuItem item) {
+                int itemId = item.getItemId();
+                switch (itemId) {
+                    case R.id.action1:
+                        query(false);
+                        return true;
+                    case R.id.action2:
+                        query(1);
+                        return true;
+                    case R.id.action3:
+                        query(2);
+                        return true;
+                    case R.id.action4:
+                        query(etIdCard.getText().toString(),etName.getText().toString());
+                        return true;
+                    case R.id.action5:
+                        query(true);
+                        return true;
+                }
+                return false;
             }
         });
         return rootView;
@@ -107,7 +141,7 @@ public class TableFragment extends ParentWithNaviFragment {
     @Override
     public void onStart() {
         super.onStart();
-        query();
+        query(false);
     }
 
     @Override
@@ -116,11 +150,10 @@ public class TableFragment extends ParentWithNaviFragment {
         ButterKnife.unbind(this);
     }
 
-    private void query() {
+
+    private void query(String idCard,String name) {
         swRefresh.setRefreshing(true);
         BmobQuery<Record> query = new BmobQuery<>();
-        String idCard = etIdCard.getText().toString();
-        String name = etName.getText().toString();
         query.order("-updatedAt");
         if(!TextUtils.isEmpty(idCard)){
             query.addWhereEqualTo("idCard",idCard);
@@ -129,6 +162,33 @@ public class TableFragment extends ParentWithNaviFragment {
             query.addWhereEqualTo("name",name);
         }
 
+        query.findObjects(new FindListener<Record>() {
+            @Override
+            public void done(List<Record> list, BmobException e) {
+                swRefresh.setRefreshing(false);
+                if (e == null) {
+                    if (list != null && list.size() > 0) {
+                        adapter.bindDatas(list);
+                    } else {
+                        if (getUserVisibleHint()) {
+                            toast("暂无信息");
+                        }
+                    }
+                } else {
+                    if (getUserVisibleHint()) {
+                        toast("获取信息出错");
+                    }
+                    Logger.e(e);
+                }
+            }
+        });
+    }
+
+    private void query(int status) {
+        swRefresh.setRefreshing(true);
+        BmobQuery<Record> query = new BmobQuery<>();
+        query.order("-updatedAt");
+        query.addWhereEqualTo("status",status);
         query.findObjects(new FindListener<Record>() {
             @Override
             public void done(List<Record> list, BmobException e) {
