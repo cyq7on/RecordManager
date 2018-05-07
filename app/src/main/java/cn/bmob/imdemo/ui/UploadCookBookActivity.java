@@ -25,6 +25,7 @@ import butterknife.ButterKnife;
 import cn.bmob.imdemo.R;
 import cn.bmob.imdemo.base.ParentWithNaviActivity;
 import cn.bmob.imdemo.bean.CookBook;
+import cn.bmob.imdemo.bean.Record;
 import cn.bmob.v3.datatype.BmobFile;
 import cn.bmob.v3.exception.BmobException;
 import cn.bmob.v3.listener.SaveListener;
@@ -60,6 +61,9 @@ public class UploadCookBookActivity extends ParentWithNaviActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_upload_cook_book);
         ButterKnife.bind(this);
+        Bundle bundle = getBundle();
+        Record record = (Record) bundle.getSerializable("record");
+        Logger.d(record.toString());
         initNaviView();
         etImage.setOnClickListener(new View.OnClickListener() {
             @Override
