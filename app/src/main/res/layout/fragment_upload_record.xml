@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@mipmap/login_bg"
-    android:orientation="vertical">
+    android:layout_height="match_parent">
 
-    <include layout="@layout/include_navi" />
-
-
-    <ScrollView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:background="@mipmap/login_bg"
+        android:orientation="vertical">
+
+        <include layout="@layout/include_navi" />
+
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -81,11 +82,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/height_title"
                 android:background="@color/transparent"
-                android:hint="@string/upload_img"
+                android:drawableRight="@mipmap/register_bottom_arrow"
                 android:gravity="center_vertical"
+                android:hint="@string/upload_img"
                 android:paddingLeft="15dip"
                 android:paddingRight="15dip"
-                android:drawableRight="@mipmap/register_bottom_arrow"
                 android:textColorHint="#ffdddddd" />
 
             <View
@@ -158,11 +159,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/height_title"
                 android:background="@color/transparent"
-                android:hint="@string/upload_date"
+                android:drawableRight="@mipmap/register_bottom_arrow"
                 android:gravity="center_vertical"
+                android:hint="@string/upload_date"
                 android:paddingLeft="15dip"
                 android:paddingRight="15dip"
-                android:drawableRight="@mipmap/register_bottom_arrow"
                 android:textColorHint="#ffdddddd" />
 
             <View
@@ -177,7 +178,6 @@
                 android:background="@color/transparent"
                 android:drawablePadding="25dip"
                 android:hint="@string/upload_break_type"
-                android:inputType="phone"
                 android:minHeight="@dimen/height_title"
                 android:paddingLeft="15dip"
                 android:shadowDx="0.0"
@@ -197,7 +197,6 @@
                 android:background="@color/transparent"
                 android:drawablePadding="25dip"
                 android:hint="@string/upload_break_place"
-                android:inputType="phone"
                 android:minHeight="@dimen/height_title"
                 android:paddingLeft="15dip"
                 android:shadowDx="0.0"
@@ -217,7 +216,6 @@
                 android:background="@color/transparent"
                 android:drawablePadding="25dip"
                 android:hint="@string/upload_fee"
-                android:inputType="phone"
                 android:minHeight="@dimen/height_title"
                 android:paddingLeft="15dip"
                 android:shadowDx="0.0"
@@ -226,17 +224,18 @@
                 android:textColorHint="#ffdddddd" />
 
         </LinearLayout>
-    </ScrollView>
 
-    <Button
-        android:id="@+id/btn_upload"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/height_title"
-        android:layout_margin="@dimen/activity_vertical_margin"
-        android:background="@drawable/btn_login_selector"
-        android:gravity="center"
-        android:text="@string/upload"
-        android:textColor="@color/base_color_text_white"
-        android:textSize="@dimen/text_size_large" />
+        <Button
+            android:id="@+id/btn_upload"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_title"
+            android:layout_margin="@dimen/activity_vertical_margin"
+            android:background="@drawable/btn_login_selector"
+            android:gravity="center"
+            android:text="@string/upload"
+            android:textColor="@color/base_color_text_white"
+            android:textSize="@dimen/text_size_large" />
 
-</LinearLayout>
+    </LinearLayout>
+
+</ScrollView>

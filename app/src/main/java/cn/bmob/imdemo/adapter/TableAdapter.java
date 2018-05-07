@@ -49,7 +49,7 @@ public class TableAdapter extends BaseRecyclerAdapter<Record> {
             holder.setText(R.id.tv_name, record.name);
             holder.setText(R.id.tv_id_card, record.idCard);
             holder.setText(R.id.tv_plate_num, record.plateNum);
-//            holder.setImageView(record.image.getFileUrl(),R.mipmap.ic_launcher,R.id.iv);
+            holder.setImageView(record.image.getFileUrl(),R.mipmap.ic_launcher,R.id.iv);
             holder.setText(R.id.tv_score, String.valueOf(record.score));
             holder.setText(R.id.tv_type, record.type);
             holder.setText(R.id.tv_tel, record.tel);

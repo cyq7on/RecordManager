@@ -8,25 +8,27 @@
     <include
         android:id="@+id/ll"
         layout="@layout/include_navi" />
-    <!--<HorizontalScrollView
 
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">-->
 
-        <android.support.v4.widget.SwipeRefreshLayout
-            android:id="@+id/sw_refresh"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_marginTop="@dimen/margin_10">
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/sw_refresh"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/margin_10">
+
+        <HorizontalScrollView
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
             <android.support.v7.widget.RecyclerView
                 android:id="@+id/rc_view"
-                android:paddingLeft="3dp"
-                android:paddingRight="3dp"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"/>
-        </android.support.v4.widget.SwipeRefreshLayout>
+                android:layout_height="match_parent"
+                android:paddingLeft="3dp"
+                android:paddingRight="3dp" />
+        </HorizontalScrollView>
+    </android.support.v4.widget.SwipeRefreshLayout>
 
-    <!--</HorizontalScrollView>-->
 
 </LinearLayout>

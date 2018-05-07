@@ -29,6 +29,7 @@ import cn.bmob.imdemo.bean.Record;
 import cn.bmob.v3.datatype.BmobFile;
 import cn.bmob.v3.exception.BmobException;
 import cn.bmob.v3.listener.SaveListener;
+import cn.bmob.v3.listener.UploadFileListener;
 
 import static android.app.Activity.RESULT_OK;
 
@@ -75,7 +76,7 @@ public class UploadRecordFragment extends ParentWithNaviFragment {
                 DatePickerDialog dialog = new DatePickerDialog(getContext(), new DatePickerDialog.OnDateSetListener() {
                     @Override
                     public void onDateSet(DatePicker datePicker, int i, int i1, int i2) {
-                        tvDate.setText(i + "-" + i1  + "-" + i2);
+                        tvDate.setText(i + "-" + (i1 + 1)  + "-" + i2);
                     }
                 },calendar.get(Calendar.YEAR),calendar.get(Calendar.MONTH),calendar.get(Calendar.DAY_OF_MONTH));
                 dialog.show();
@@ -84,17 +85,17 @@ public class UploadRecordFragment extends ParentWithNaviFragment {
         btnUpload.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String name = etName.getText().toString();
-                String idCard = etIdCard.getText().toString();
-                String plate = etPlate.getText().toString();
-                String score = etScore.getText().toString();
-                String type = etType.getText().toString();
-                String tel = etTel.getText().toString();
+                final String name = etName.getText().toString();
+                final String idCard = etIdCard.getText().toString();
+                final String plate = etPlate.getText().toString();
+                final String score = etScore.getText().toString();
+                final String type = etType.getText().toString();
+                final String tel = etTel.getText().toString();
                 String image = etImage.getText().toString();
-                String date = tvDate.getText().toString();
-                String breakType = etBreakType.getText().toString();
-                String breakPlace = etBreakPlace.getText().toString();
-                String fee = etFee.getText().toString();
+                final String date = tvDate.getText().toString();
+                final String breakType = etBreakType.getText().toString();
+                final String breakPlace = etBreakPlace.getText().toString();
+                final String fee = etFee.getText().toString();
                 if(TextUtils.isEmpty(name) || TextUtils.isEmpty(idCard) || TextUtils.isEmpty(plate)
                         || TextUtils.isEmpty(score) || TextUtils.isEmpty(type)
                         || TextUtils.isEmpty(tel)|| TextUtils.isEmpty(image)|| TextUtils.isEmpty(date)
@@ -103,23 +104,34 @@ public class UploadRecordFragment extends ParentWithNaviFragment {
                     toast("请将信息填写完整");
                     return;
                 }
-                Record record = new Record();
-                record.name = name;
-                record.idCard = idCard;
-                record.plateNum = plate;
-                record.score = Integer.parseInt(score);
-                record.type = type;
-                record.tel = tel;
-                record.image = new BmobFile(new File(url));
-                record.date = date;
-                record.breakType = breakType;
-                record.breakPlace = breakPlace;
-                record.fee = fee;
-                record.save(new SaveListener<String>() {
+                final BmobFile bmobFile = new BmobFile(new File(url));
+                bmobFile.uploadblock(new UploadFileListener() {
                     @Override
-                    public void done(String s, BmobException e) {
+                    public void done(BmobException e) {
                         if (e == null) {
-                            toast("上传成功");
+                            Record record = new Record();
+                            record.name = name;
+                            record.idCard = idCard;
+                            record.plateNum = plate;
+                            record.score = Integer.parseInt(score);
+                            record.type = type;
+                            record.tel = tel;
+                            record.image = bmobFile;
+                            record.date = date;
+                            record.breakType = breakType;
+                            record.breakPlace = breakPlace;
+                            record.fee = fee;
+                            record.save(new SaveListener<String>() {
+                                @Override
+                                public void done(String s, BmobException e) {
+                                    if (e == null) {
+                                        toast("上传成功");
+                                    } else {
+                                        toast("上传失败");
+                                        Logger.d(e.getMessage());
+                                    }
+                                }
+                            });
                         } else {
                             toast("上传失败");
                             Logger.d(e.getMessage());
