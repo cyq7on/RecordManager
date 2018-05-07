@@ -75,9 +75,9 @@ public class UploadRecordFragment extends ParentWithNaviFragment {
                 DatePickerDialog dialog = new DatePickerDialog(getContext(), new DatePickerDialog.OnDateSetListener() {
                     @Override
                     public void onDateSet(DatePicker datePicker, int i, int i1, int i2) {
-                        tvDate.setText(i + "-" + (i1 + 1) + "-" + i2);
+                        tvDate.setText(i + "-" + i1  + "-" + i2);
                     }
-                },calendar.get(Calendar.YEAR),calendar.get(Calendar.MONTH) + 1,calendar.get(Calendar.DAY_OF_MONTH));
+                },calendar.get(Calendar.YEAR),calendar.get(Calendar.MONTH),calendar.get(Calendar.DAY_OF_MONTH));
                 dialog.show();
             }
         });
