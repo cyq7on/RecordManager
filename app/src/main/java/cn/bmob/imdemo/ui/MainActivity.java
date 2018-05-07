@@ -16,8 +16,8 @@ import cn.bmob.imdemo.base.ParentWithNaviFragment;
 import cn.bmob.imdemo.bean.User;
 import cn.bmob.imdemo.db.NewFriendManager;
 import cn.bmob.imdemo.event.RefreshEvent;
-import cn.bmob.imdemo.ui.fragment.RecordFragment;
 import cn.bmob.imdemo.ui.fragment.SetFragment;
+import cn.bmob.imdemo.ui.fragment.TableFragment;
 import cn.bmob.imdemo.ui.fragment.UploadRecordFragment;
 import cn.bmob.imdemo.util.IMMLeaks;
 import cn.bmob.newim.BmobIM;
@@ -103,7 +103,7 @@ public class MainActivity extends BaseActivity {
     }
 
     private void initTab() {
-        recordFramgent = new RecordFragment();
+        recordFramgent = new TableFragment();
         setFragment = new SetFragment();
         recordFragment = new UploadRecordFragment();
         fragments = new Fragment[]{recordFramgent, recordFragment, setFragment};

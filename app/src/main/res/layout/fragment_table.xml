@@ -14,24 +14,18 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+        <android.support.v4.widget.SwipeRefreshLayout
+            android:id="@+id/sw_refresh"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/margin_10">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rc_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+        </android.support.v4.widget.SwipeRefreshLayout>
+
     </HorizontalScrollView>
-
-    <android.support.v4.widget.SwipeRefreshLayout
-        android:id="@+id/sw_refresh"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="@dimen/margin_10">
-
-        <com.evrencoskun.tableview.TableView
-            android:id="@+id/content_container"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-
-            app:column_header_height="@dimen/cell_height"
-            app:row_header_width="@dimen/row_header_width"
-            app:selected_color="@color/header_line_color"
-            app:unselected_color="@color/default_background_color"
-            />
-    </android.support.v4.widget.SwipeRefreshLayout>
 
 </LinearLayout>

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="5dp"
+    android:layout_margin="5dp"
+    android:background="@drawable/input_bg">
+
+    <TextView
+        android:id="@+id/tv_id"
+        android:textColor="@color/base_color_text_black"
+        android:textSize="20sp"
+        android:layout_width="120dp"
+        android:layout_height="45dp"/>
+
+    <TextView
+        android:id="@+id/tv_name"
+        android:textColor="@color/base_color_text_black"
+        android:textSize="20sp"
+        android:layout_width="120dp"
+        android:layout_height="45dp"/>
+
+    <TextView
+        android:id="@+id/tv_id_card"
+        android:textColor="@color/base_color_text_black"
+        android:textSize="20sp"
+        android:layout_width="120dp"
+        android:layout_height="45dp"/>
+    <TextView
+        android:id="@+id/tv_plate_num"
+        android:textColor="@color/base_color_text_black"
+        android:textSize="20sp"
+        android:layout_width="120dp"
+        android:layout_height="45dp"/>
+    <TextView
+        android:id="@+id/tv_image"
+        android:textColor="@color/base_color_text_black"
+        android:textSize="20sp"
+        android:layout_width="120dp"
+        android:layout_height="45dp"/>
+    <!--<ImageView
+        android:id="@+id/iv"
+        android:textColor="@color/base_color_text_black"
+        android:textSize="20sp"
+        android:layout_width="120dp"
+        android:layout_height="45dp"/>-->
+    <TextView
+        android:id="@+id/tv_score"
+        android:textColor="@color/base_color_text_black"
+        android:textSize="20sp"
+        android:layout_width="120dp"
+        android:layout_height="45dp"/>
+    <TextView
+        android:id="@+id/tv_type"
+        android:textColor="@color/base_color_text_black"
+        android:textSize="20sp"
+        android:layout_width="120dp"
+        android:layout_height="45dp"/>
+    <TextView
+        android:id="@+id/tv_tel"
+        android:textColor="@color/base_color_text_black"
+        android:textSize="20sp"
+        android:layout_width="120dp"
+        android:layout_height="45dp"/>
+    <TextView
+        android:id="@+id/tv_date"
+        android:textColor="@color/base_color_text_black"
+        android:textSize="20sp"
+        android:layout_width="120dp"
+        android:layout_height="45dp"/>
+    <TextView
+        android:id="@+id/tv_break_type"
+        android:textColor="@color/base_color_text_black"
+        android:textSize="20sp"
+        android:layout_width="120dp"
+        android:layout_height="45dp"/>
+    <TextView
+        android:id="@+id/tv_break_place"
+        android:textColor="@color/base_color_text_black"
+        android:textSize="20sp"
+        android:layout_width="120dp"
+        android:layout_height="45dp"/>
+    <TextView
+        android:id="@+id/tv_fee"
+        android:textColor="@color/base_color_text_black"
+        android:textSize="20sp"
+        android:layout_width="120dp"
+        android:layout_height="45dp"/>
+
+
+
+</LinearLayout>
