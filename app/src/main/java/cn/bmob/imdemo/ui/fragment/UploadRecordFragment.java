@@ -57,9 +57,23 @@ public class UploadRecordFragment extends ParentWithNaviFragment {
         return "上传";
     }
 
+    @Override
+    public void onHiddenChanged(boolean hidden) {
+        super.onHiddenChanged(hidden);
+        if(hidden){
+            return;
+        }
+        if(user.role != 1){
+            toast("只有管理员才有上传权限！");
+        }
+    }
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        if(user.role != 1){
+            return super.onCreateView(inflater,container,savedInstanceState);
+        }
         rootView = inflater.inflate(R.layout.fragment_upload_record, container, false);
         ButterKnife.bind(this, rootView);
         initNaviView();

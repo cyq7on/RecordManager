@@ -5,9 +5,12 @@ import android.support.annotation.Nullable;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
 
 import com.orhanobut.logger.Logger;
 
@@ -31,7 +34,14 @@ public class TableFragment extends ParentWithNaviFragment {
     RecyclerView rcView;
     @Bind(R.id.sw_refresh)
     SwipeRefreshLayout swRefresh;
-    private String[] titles = {"ID", "姓名", "身份证号", "车牌号", "分数", "驾照类型", "电话号码"};
+    @Bind(R.id.btn_condition)
+    Button btnCondition;
+    @Bind(R.id.btn_black)
+    Button btnBlack;
+    @Bind(R.id.et_idCard)
+    EditText etIdCard;
+    @Bind(R.id.et_name)
+    EditText etName;
     private TableAdapter adapter;
 
     @Override
@@ -79,6 +89,18 @@ public class TableFragment extends ParentWithNaviFragment {
                 query();
             }
         });
+        btnCondition.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                query();
+            }
+        });
+        btnBlack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                query(true);
+            }
+        });
         return rootView;
     }
 
@@ -97,6 +119,44 @@ public class TableFragment extends ParentWithNaviFragment {
     private void query() {
         swRefresh.setRefreshing(true);
         BmobQuery<Record> query = new BmobQuery<>();
+        String idCard = etIdCard.getText().toString();
+        String name = etName.getText().toString();
+        query.order("-updatedAt");
+        if(!TextUtils.isEmpty(idCard)){
+            query.addWhereEqualTo("idCard",idCard);
+        }
+        if(!TextUtils.isEmpty(name)){
+            query.addWhereEqualTo("name",name);
+        }
+
+        query.findObjects(new FindListener<Record>() {
+            @Override
+            public void done(List<Record> list, BmobException e) {
+                swRefresh.setRefreshing(false);
+                if (e == null) {
+                    if (list != null && list.size() > 0) {
+                        adapter.bindDatas(list);
+                    } else {
+                        if (getUserVisibleHint()) {
+                            toast("暂无信息");
+                        }
+                    }
+                } else {
+                    if (getUserVisibleHint()) {
+                        toast("获取信息出错");
+                    }
+                    Logger.e(e);
+                }
+            }
+        });
+    }
+
+    private void query(boolean isBlack) {
+        swRefresh.setRefreshing(true);
+        BmobQuery<Record> query = new BmobQuery<>();
+        if(isBlack){
+            query.addWhereEqualTo("score",12);
+        }
         query.order("-updatedAt");
         query.findObjects(new FindListener<Record>() {
             @Override

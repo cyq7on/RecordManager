@@ -13,8 +13,9 @@
     <android.support.v4.widget.SwipeRefreshLayout
         android:id="@+id/sw_refresh"
         android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:layout_marginTop="@dimen/margin_10">
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/margin_10"
+        android:layout_weight="1">
 
         <HorizontalScrollView
 
@@ -29,6 +30,64 @@
                 android:paddingRight="3dp" />
         </HorizontalScrollView>
     </android.support.v4.widget.SwipeRefreshLayout>
+
+    <EditText
+        android:id="@+id/et_idCard"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/height_title"
+        android:background="@color/transparent"
+        android:drawablePadding="25dip"
+        android:hint="@string/login_idCard"
+        android:paddingLeft="15dip"
+        android:shadowDx="0.0"
+        android:shadowDy="1.0"
+        android:shadowRadius="1.0"
+        android:textColorHint="#ffdddddd" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@mipmap/base_horization_line" />
+
+    <EditText
+        android:id="@+id/et_name"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/height_title"
+        android:background="@color/transparent"
+        android:drawablePadding="25dip"
+        android:hint="@string/login_username_hint"
+        android:paddingLeft="15dip"
+        android:textColorHint="#ffdddddd" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="3dp">
+
+        <Button
+            android:id="@+id/btn_condition"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/height_title"
+            android:layout_marginRight="3dp"
+            android:layout_weight="1"
+            android:background="@drawable/btn_login_selector"
+            android:gravity="center"
+            android:text="条件查询"
+            android:textColor="@color/base_color_text_white"
+            android:textSize="@dimen/text_size_large" />
+
+        <Button
+            android:id="@+id/btn_black"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/height_title"
+            android:layout_marginLeft="3dp"
+            android:layout_weight="1"
+            android:background="@drawable/btn_login_selector"
+            android:gravity="center"
+            android:text="黑名单查询"
+            android:textColor="@color/base_color_text_white"
+            android:textSize="@dimen/text_size_large" />
+    </LinearLayout>
 
 
 </LinearLayout>
