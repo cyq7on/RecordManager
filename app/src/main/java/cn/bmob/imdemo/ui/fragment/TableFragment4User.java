@@ -16,6 +16,7 @@ import android.widget.PopupMenu;
 
 import com.orhanobut.logger.Logger;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.Bind;
@@ -196,6 +197,7 @@ public class TableFragment4User extends ParentWithNaviFragment {
                         adapter.bindDatas(list);
                     } else {
                         if (getUserVisibleHint()) {
+                            adapter.bindDatas(new ArrayList<Record>());
                             toast("您还没有相应记录哦");
                         }
                     }
@@ -226,6 +228,7 @@ public class TableFragment4User extends ParentWithNaviFragment {
                         adapter.bindDatas(list);
                     } else {
                         if (getUserVisibleHint()) {
+                            adapter.bindDatas(new ArrayList<Record>());
                             toast("您还没有违章记录哦");
                         }
                     }

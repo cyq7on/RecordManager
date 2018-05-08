@@ -15,6 +15,7 @@ import android.widget.PopupMenu;
 
 import com.orhanobut.logger.Logger;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.Bind;
@@ -187,6 +188,7 @@ public class TableFragment extends ParentWithNaviFragment {
                         adapter.bindDatas(list);
                     } else {
                         if (getUserVisibleHint()) {
+                            adapter.bindDatas(new ArrayList<Record>());
                             toast("暂无信息");
                         }
                     }
@@ -214,6 +216,7 @@ public class TableFragment extends ParentWithNaviFragment {
                         adapter.bindDatas(list);
                     } else {
                         if (getUserVisibleHint()) {
+                            adapter.bindDatas(new ArrayList<Record>());
                             toast("暂无信息");
                         }
                     }
@@ -243,6 +246,7 @@ public class TableFragment extends ParentWithNaviFragment {
                         adapter.bindDatas(list);
                     } else {
                         if (getUserVisibleHint()) {
+                            adapter.bindDatas(new ArrayList<Record>());
                             toast("暂无信息");
                         }
                     }

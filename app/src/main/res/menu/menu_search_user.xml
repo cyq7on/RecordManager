@@ -12,11 +12,11 @@
         app:showAsAction="never"
         android:id="@+id/action2"
         android:orderInCategory="100"
-        android:title="待办违章" />
+        android:title="未撤销" />
     <item
         app:showAsAction="never"
         android:id="@+id/action3"
         android:orderInCategory="100"
-        android:title="已办违章" />
+        android:title="已撤销" />
 
 </menu>
