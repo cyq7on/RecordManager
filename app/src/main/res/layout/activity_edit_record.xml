@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@mipmap/login_bg"
+        android:orientation="vertical">
+
+        <include layout="@layout/include_navi" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@drawable/input_bg"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/et_name"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/height_title"
+                android:background="@color/transparent"
+                android:drawablePadding="25dip"
+                android:hint="@string/upload_user"
+                android:paddingLeft="15dip"
+                android:shadowDx="0.0"
+                android:shadowDy="1.0"
+                android:shadowRadius="1.0"
+                android:textColorHint="#ffdddddd" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@mipmap/base_horization_line" />
+
+
+            <EditText
+                android:id="@+id/et_idCard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/transparent"
+                android:drawablePadding="25dip"
+                android:hint="@string/upload_id"
+                android:minHeight="@dimen/height_title"
+                android:paddingLeft="15dip"
+                android:shadowDx="0.0"
+                android:shadowDy="1.0"
+                android:shadowRadius="1.0"
+                android:textColorHint="#ffdddddd" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@mipmap/base_horization_line" />
+
+            <EditText
+                android:id="@+id/et_plate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/transparent"
+                android:drawablePadding="25dip"
+                android:hint="@string/upload_plate"
+                android:minHeight="@dimen/height_title"
+                android:paddingLeft="15dip"
+                android:shadowDx="0.0"
+                android:shadowDy="1.0"
+                android:shadowRadius="1.0"
+                android:textColorHint="#ffdddddd" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@mipmap/base_horization_line" />
+
+
+            <ImageView
+                android:id="@+id/iv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@mipmap/base_horization_line" />
+
+            <EditText
+                android:id="@+id/et_score"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/transparent"
+                android:drawablePadding="25dip"
+                android:hint="@string/upload_score"
+                android:inputType="number"
+                android:minHeight="@dimen/height_title"
+                android:paddingLeft="15dip"
+                android:shadowDx="0.0"
+                android:shadowDy="1.0"
+                android:shadowRadius="1.0"
+                android:textColorHint="#ffdddddd" />
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@mipmap/base_horization_line" />
+
+            <EditText
+                android:id="@+id/et_type"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/transparent"
+                android:drawablePadding="25dip"
+                android:hint="@string/upload_type"
+                android:minHeight="@dimen/height_title"
+                android:paddingLeft="15dip"
+                android:shadowDx="0.0"
+                android:shadowDy="1.0"
+                android:shadowRadius="1.0"
+                android:textColorHint="#ffdddddd" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@mipmap/base_horization_line" />
+
+            <EditText
+                android:id="@+id/et_tel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/transparent"
+                android:drawablePadding="25dip"
+                android:hint="@string/upload_tel"
+                android:inputType="phone"
+                android:minHeight="@dimen/height_title"
+                android:paddingLeft="15dip"
+                android:shadowDx="0.0"
+                android:shadowDy="1.0"
+                android:shadowRadius="1.0"
+                android:textColorHint="#ffdddddd" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@mipmap/base_horization_line" />
+
+            <EditText
+                android:id="@+id/tv_date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/transparent"
+                android:drawablePadding="25dip"
+                android:hint="清填写时间"
+                android:minHeight="@dimen/height_title"
+                android:paddingLeft="15dip"
+                android:shadowDx="0.0"
+                android:shadowDy="1.0"
+                android:shadowRadius="1.0"
+                android:textColorHint="#ffdddddd" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@mipmap/base_horization_line" />
+
+            <EditText
+                android:id="@+id/et_break_type"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/transparent"
+                android:drawablePadding="25dip"
+                android:hint="@string/upload_break_type"
+                android:minHeight="@dimen/height_title"
+                android:paddingLeft="15dip"
+                android:shadowDx="0.0"
+                android:shadowDy="1.0"
+                android:shadowRadius="1.0"
+                android:textColorHint="#ffdddddd" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@mipmap/base_horization_line" />
+
+            <EditText
+                android:id="@+id/et_break_place"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/transparent"
+                android:drawablePadding="25dip"
+                android:hint="@string/upload_break_place"
+                android:minHeight="@dimen/height_title"
+                android:paddingLeft="15dip"
+                android:shadowDx="0.0"
+                android:shadowDy="1.0"
+                android:shadowRadius="1.0"
+                android:textColorHint="#ffdddddd" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@mipmap/base_horization_line" />
+
+            <EditText
+                android:id="@+id/et_fee"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/transparent"
+                android:drawablePadding="25dip"
+                android:hint="@string/upload_fee"
+                android:minHeight="@dimen/height_title"
+                android:paddingLeft="15dip"
+                android:shadowDx="0.0"
+                android:shadowDy="1.0"
+                android:shadowRadius="1.0"
+                android:textColorHint="#ffdddddd" />
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btn_update"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_title"
+            android:layout_margin="5dp"
+            android:background="@drawable/btn_login_selector"
+            android:gravity="center"
+            android:text="更新"
+            android:textColor="@color/base_color_text_white"
+            android:textSize="@dimen/text_size_large" />
+        <Button
+            android:id="@+id/btn_delete"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_title"
+            android:layout_margin="5dp"
+            android:background="@drawable/btn_login_selector"
+            android:gravity="center"
+            android:text="删除"
+            android:textColor="@color/base_color_text_white"
+            android:textSize="@dimen/text_size_large" />
+        <Button
+            android:id="@+id/btn_agree"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_title"
+            android:layout_margin="5dp"
+            android:background="@drawable/btn_login_selector"
+            android:gravity="center"
+            android:text="同意撤销"
+            android:textColor="@color/base_color_text_white"
+            android:textSize="@dimen/text_size_large" />
+
+    </LinearLayout>
+
+</ScrollView>

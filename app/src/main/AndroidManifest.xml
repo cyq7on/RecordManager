@@ -75,7 +75,8 @@
             android:value="6c24034457577db9ec870a0cf028033d" />
 
         <activity android:name=".ui.UploadCookBookActivity" />
-        <activity android:name=".ui.UploadDietActivity"></activity>
+        <activity android:name=".ui.UploadDietActivity" />
+        <activity android:name=".ui.EditRecordActivity"></activity>
     </application>
 
 </manifest>

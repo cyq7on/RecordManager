@@ -26,7 +26,7 @@ import cn.bmob.imdemo.adapter.base.IMutlipleItem;
 import cn.bmob.imdemo.base.ParentWithNaviActivity;
 import cn.bmob.imdemo.base.ParentWithNaviFragment;
 import cn.bmob.imdemo.bean.Record;
-import cn.bmob.imdemo.ui.UploadCookBookActivity;
+import cn.bmob.imdemo.ui.EditRecordActivity;
 import cn.bmob.v3.BmobQuery;
 import cn.bmob.v3.exception.BmobException;
 import cn.bmob.v3.listener.FindListener;
@@ -108,7 +108,7 @@ public class TableFragment extends ParentWithNaviFragment {
                 Record record = adapter.getItem(position);
                 Bundle bundle = new Bundle();
                 bundle.putSerializable("record",record);
-                startActivity(UploadCookBookActivity.class,bundle);
+                startActivity(EditRecordActivity.class,bundle);
             }
 
             @Override
