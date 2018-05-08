@@ -54,9 +54,24 @@ public class EditRecordActivity extends ParentWithNaviActivity {
     }
 
     @Override
+    public ParentWithNaviActivity.ToolBarListener setToolBarListener() {
+        return new ParentWithNaviActivity.ToolBarListener() {
+            @Override
+            public void clickLeft() {
+                finish();
+            }
+
+            @Override
+            public void clickRight() {
+            }
+        };
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_record);
+        initNaviView();
         ButterKnife.bind(this);
         Bundle bundle = getBundle();
         final Record record = (Record) bundle.getSerializable("record");
