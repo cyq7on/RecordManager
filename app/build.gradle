@@ -68,6 +68,4 @@ dependencies {
     compile('com.yuyh.imgsel:library:2.0.2') {
         exclude module: 'support-v4'
     }
-    compile 'com.github.HYY-yu:TableRecyclerView:v1.0.0'
-    compile 'com.evrencoskun.library:tableview:0.8.6'
 }
