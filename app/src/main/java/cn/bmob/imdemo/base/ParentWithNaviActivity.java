@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -25,7 +24,6 @@ public abstract class ParentWithNaviActivity extends BaseActivity {
     public TextView tv_title;
     public ImageView tv_left;
     public TextView tv_right;
-    public User user;
 
     /**导航栏标题:必填项
      * @return
@@ -61,11 +59,6 @@ public abstract class ParentWithNaviActivity extends BaseActivity {
         refreshTop();
     }
 
-    @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        user = BmobUser.getCurrentUser(User.class);
-    }
 
     View.OnClickListener clickListener = new View.OnClickListener() {
 

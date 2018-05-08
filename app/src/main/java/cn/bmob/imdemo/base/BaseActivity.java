@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.IBinder;
+import android.support.annotation.Nullable;
 import android.support.v4.app.FragmentActivity;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,6 +20,8 @@ import org.greenrobot.eventbus.Subscribe;
 
 import butterknife.ButterKnife;
 import cn.bmob.imdemo.Config;
+import cn.bmob.imdemo.bean.User;
+import cn.bmob.v3.BmobUser;
 
 /**基类
  * @author :smile
@@ -26,6 +29,14 @@ import cn.bmob.imdemo.Config;
  * @date :2016-01-15-18:23
  */
 public class BaseActivity extends FragmentActivity {
+
+    public User user;
+
+    @Override
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        user = BmobUser.getCurrentUser(User.class);
+    }
 
     @Override
     protected void onStart() {

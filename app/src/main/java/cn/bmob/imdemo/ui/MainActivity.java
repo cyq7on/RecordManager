@@ -18,6 +18,7 @@ import cn.bmob.imdemo.db.NewFriendManager;
 import cn.bmob.imdemo.event.RefreshEvent;
 import cn.bmob.imdemo.ui.fragment.SetFragment;
 import cn.bmob.imdemo.ui.fragment.TableFragment;
+import cn.bmob.imdemo.ui.fragment.TableFragment4User;
 import cn.bmob.imdemo.ui.fragment.UploadRecordFragment;
 import cn.bmob.imdemo.util.IMMLeaks;
 import cn.bmob.newim.BmobIM;
@@ -46,7 +47,7 @@ public class MainActivity extends BaseActivity {
     ImageView iv_contact_tips;
 
     private TextView[] mTabs;
-    private ParentWithNaviFragment recordFramgent, recordFragment;
+    private ParentWithNaviFragment recordFragment, recordUploadFragment;
     private SetFragment setFragment;
     private Fragment[] fragments;
     private int index;
@@ -103,16 +104,20 @@ public class MainActivity extends BaseActivity {
     }
 
     private void initTab() {
-        recordFramgent = new TableFragment();
+        if(user.role == 0){
+            recordFragment = new TableFragment4User();
+        }else {
+            recordFragment = new TableFragment();
+        }
         setFragment = new SetFragment();
-        recordFragment = new UploadRecordFragment();
-        fragments = new Fragment[]{recordFramgent, recordFragment, setFragment};
+        recordUploadFragment = new UploadRecordFragment();
+        fragments = new Fragment[]{recordFragment, recordUploadFragment, setFragment};
         getSupportFragmentManager().beginTransaction()
-                .add(R.id.fragment_container, recordFramgent).
-                add(R.id.fragment_container, recordFragment)
+                .add(R.id.fragment_container, recordFragment).
+                add(R.id.fragment_container, recordUploadFragment)
                 .add(R.id.fragment_container, setFragment)
-                .hide(setFragment).hide(recordFragment)
-                .show(recordFramgent).commit();
+                .hide(setFragment).hide(recordUploadFragment)
+                .show(recordFragment).commit();
     }
 
     public void onTabSelect(View view) {
